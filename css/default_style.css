@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+}
+
+.dark {
+    --positive: red;
+    --negative: black;
+    --confirm: greenyellow;
+    --action: yellow;
+    --primary-background: rgb(60 60 60);
+    --secondary-background: lightgray;
+    --tertiary-background: rgb(70 70 70);
+    --primary-foreground: white;
+    --button-text: white;
+}
+
+.light {
+    --positive: greenyellow;
+    --negative: red;
+    --confirm: yellow;
+    --action: white;
+    --primary-background: white;
+    --secondary-background: white;
+    --tertiary-background: rgb(220 220 220);
+    --primary-foreground: lightgray;
+    --button-text: black;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-background);
+}
+
+#main {
+    display: flex;
+    width: 40rem;
+    flex-flow: wrap;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+#item_image {
+    height: 30rem;
+    width: 30rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.25);
+    object-fit: fill;
+}
+
+#item {
+    width: 16rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.25rem;
+    flex-direction: row;
+    justify-content: center;
+    background-color: none;
+}
+
+#item_info {
+    width: 16rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.25);
+    background-color: var(--secondary-background);
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.button {
+    height: fit-content;
+    width: 5rem;
+    flex: 1 0 1;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.4rem;
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    padding: 1rem;
+    margin: 0.25rem;
+    user-select: none;
+}
+
+    .button#change_item {
+        background-color: var(--action);
+        font-size: 2rem;
+        width: 90%;
+    }
+
+    .button#sell {
+        height: fit-content;
+        width: 90%;
+        flex: 1 0 1;
+        text-align: center;
+        align-self: center;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        background-color: var(--confirm);
+        font-size: 1.4rem;
+        margin: 0.5rem;
+    }
+
+    .button[data-color="red"] {
+        background-color: var(--positive);
+        color: var(--button-text);
+    }
+
+    .button[data-color="black"] {
+        background-color: var(--negative);
+        color: var(--button-text);
+    }
+
+    .button:hover {
+        cursor: pointer;
+        box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0);
+    }
+
+    .button:active {
+        background-color: orchid !important; 
+    }
+
+.tab {
+    height: 1.8rem;
+    width: 100%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: var(--primary-foreground);
+    font-size: 1.4rem;
+    padding: 0.25rem;
+}
+
+    .tab[data-shade="dark"] {
+        height: 1.8rem;
+        width: 100%;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        background-color: var(--secondary-background);
+        font-size: 1.4rem;
+        padding: 0.25rem;
+    }
+
+.value {
+    color: var(--positive);
+}

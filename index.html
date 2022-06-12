@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8" />
+    <title>POSv2</title>
+
+    <script src="./lib/chart.min.js"></script>
+
+    <script src="./js_front/functions.js" defer></script>
+    <script src="./js_front/index.js" defer></script>
+    <script src="./js_front/button_functions.js" defer></script>
+    <link rel="stylesheet" href="./css/style_reset.css" />
+    <link rel="stylesheet" href="./css/default_style.css" />
+    <link rel="stylesheet" href="./css/view_style.css" />
+    <link rel="icon" href="./icon.png">
+</head>
+
+<body class="dark">
+
+    <div id="info_tab">
+
+    </div>
+
+    <div id="view_container">
+
+        <div id="main">
+
+            <img id="item_image" alt="Image of the current item" />
+
+            <div id="item">
+
+                <div class="button" data-color="black" onclick="addItems(-5)">
+                    -5
+                </div>
+
+                <div class="button" data-color="black" onclick="addItems(-1)">
+                    -1
+                </div>
+
+                <div class="button" id="change_item" onclick="changeItem()">
+                    CHANGE ITEM
+                </div>
+
+                <div class="button" data-color="red" onclick="addItems(1)">
+                    +1
+                </div>
+
+                <div class="button" data-color="red" onclick="addItems(5)">
+                    +5
+                </div>
+
+            </div>
+
+            <div id="item_info">
+
+                <div class="tab" id="currentItem">
+                    <span>ITEM: </span>
+                    <span class="value"></span>
+                </div>
+
+                <div class="tab" id="currentCount" data-shade="dark">
+                    <span>ITEM COUNT [#]: </span>
+                    <span class="value"></span>
+                </div>
+
+                <div class="tab">
+                </div>
+
+                <div class="tab" data-shade="dark">
+                </div>
+
+                <div class="tab" id="total">
+                    <span>TOTAL [$]: </span>
+                    <span class="value"></span>
+                </div>
+
+                <div class="button" id="sell" onclick="sell()">
+                    SELL
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="default_view" id="data">
+
+            <canvas id="chart"></canvas>
+
+            <div id="data_info">
+                <div class="tab" id="gross_revenue">
+                    <span>GROSS REVENUE [$]: </span>
+                    <span class="value"></span>
+                </div>
+                <div class="tab" id="gross_sales" data-shade="dark">
+                    <span>GROSS SALES [#]: </span>
+                    <span class="value"></span>
+                </div>
+                <div class="tab" id="revenue_by_sales">
+                    <span>REVENUE / SALES [%]: </span>
+                    <span class="value"></span>
+                </div>
+                <div class="tab" id="total_transactions" data-shade="dark">
+                    <span>TOTAL TRANSACTIONS [#]: </span>
+                    <span class="value"></span>
+                </div>
+                <div class="tab" id="most_popular">
+                    <span>MOST POPULAR ITEM: </span>
+                    <span class="value"></span>
+                </div>
+                <div class="tab" id="popular_sold" data-shade="dark">
+                    <span>POPULAR SOLD [#]: </span>
+                    <span class="value"></span>
+                </div>
+                <div class="tab" id="latest_time">
+                    <span>LATEST TIME: </span>
+                    <span class="value"></span>
+                </div>
+            </div>
+
+            <div class="button" id="load_data" onclick="loadData()">
+                LOAD DATA
+                <input class="hidden_input" type="file" id="input" accept=".json">
+            </div>
+
+            <div class="button" id="save_data" onclick="saveData()">
+                SAVE DATA
+            </div>
+
+        </div>
+
+        <div class="default_view" id="manage">
+
+            <div id="inventory_display">
+
+
+
+            </div>
+
+            <div class="button" id="theme_toggle" onclick="themeToggle()">
+                LIGHT MODE
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="nav_tab">
+
+        <div class="button" id="data_view" onclick="changeView('data_view')" data-selected="false">
+            Data
+        </div>
+
+        <div class="button" id="sell_view" onclick="changeView('sell_view')" data-selected="true">
+            Sell
+        </div>
+
+        <div class="button" id="manage_view" onclick="changeView('manage_view')" data-selected="false">
+            Manage
+        </div>
+
+    </div>
+
+</body>
+
+</html>

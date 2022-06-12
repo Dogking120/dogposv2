@@ -1,0 +1,17 @@
+{
+  "name": "posv2",
+  "version": "1.0.0",
+  "description": "POS system rewritten",
+  "main": "js_backend/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Alex Tep",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^19.0.4"
+  },
+  "dependencies": {
+    "chart.js": "^3.8.0"
+  }
+}
